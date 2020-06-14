@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<!--前面段模板-->
+<head th:fragment="head(title)">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width",initial-scale=1.0/>
+    <title th:replace="${title}">博客详情</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+    <link rel="stylesheet" href="../static/css/me.css" th:href="@{/css/me.css}"/>
+    <link rel="stylesheet" type="text/css" href="../static/css/typo.css" th:href="@{/css/typo.css}"/>
+    <link rel="stylesheet" type="text/css" href="../static/css/animate.css" th:href="@{/css/animate.css}"/>
+    <link rel="stylesheet" type="text/css" href="../static/lib/prism/prism.css" th:href="@{/lib/prism/prism.css}"/>
+</head>
+<body>
+        <!-- 导航 -->
+        <nav th:fragment="menu(n)"  class="ui inverted segment m-padded-tb-mini" >
+            <div class="ui container">
+                <div class="ui inverted stackable menu">
+                    <h2 class="ui teal header item">Blog</h2>
+                    <!-- m-item的作用是在手机移动端时，点击按钮会出示导航栏，原导航栏是隐藏的（m-mobile-hide） -->
+                    <a href="#" class="m-item item m-mobile-hide " th:classappend="${n==1}? 'active'"><i class=" home icon"></i>首页</a>
+                    <a href="#" class="m-item item m-mobile-hide " th:classappend="${n==2}? 'active'"><i class=" idea icon"></i>分类</a>
+                    <a href="#" class="m-item item m-mobile-hide " th:classappend="${n==3}? 'active'"><i class=" tags icon"></i>标签</a>
+                    <a href="#" class="m-item item m-mobile-hide " th:classappend="${n==4}? 'active'"><i class=" clone icon"></i>归档</a>
+                    <a href="#" class="m-item item m-mobile-hide " th:classappend="${n==5}? 'active'"><i class=" info icon"></i>关于我</a>
+                    <div class="m-item right item m-mobile-hide">
+                        <div class="ui item inverted transparent input">
+                            <input type="text" placeholder="search...."/>
+                            <i class="search link icon"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 存在问题，该按钮不可设置？？？？？但对后续应该无影响 -->
+            <div>
+                <a href="#" class="ui menu toggle black icon button m-right-top m-mobile-show">
+                    <i class="sidebar icon"></i>
+                </a>
+            </div>
+        </nav>
+
+        <!-- 底部内容 -->
+        <footer th:fragment="footer" class="ui inverted vertical segment m-padded-tb-massive ">
+            <div class="ui center aligned container m-padded-tb-massive">
+                <div class="ui inverted divided stackable grid">
+                    <div class="three wide column">
+                        <img src="../static/images/二维码.jpg" th:src="@{images/二维码.jpg}" class="ui rounded center aligned" alt="" style="width: 100px;">
+                    </div>
+                    <div class="three wide column">
+                        <h4 class="ui inverted header m-opcity-mini">最新博客</h4>
+                        <div  class="ui link list inverted">
+                            <a href="#" class="item">用户故事（User Story）</a>
+                            <a href="#" class="item">关于我</a>
+                            <a href="#" class="item">HelloWorld</a>
+                        </div>
+                    </div>
+                    <div class="three wide column">
+                        <h4 class="ui inverted header m-opcity-mini">联系我</h4>
+                        <div  class="ui link list inverted">
+                            <a href="#" class="item">E-mail</a>
+
+                            <a href="#" class="item">QQ：1191133427</a>
+                        </div>
+                    </div>
+                    <div class="seven wide column">
+                        <h4 class="ui inverted header m-opcity-mini" >最新博客</h4>
+                        <p class="m-text-thin m-opcity-mini">这是我的个人博客，发一些关于学习路上的笔记，思考和关于我的一些消息，愿明天即新生!!!!</p>
+                    </div>
+                </div>
+                <!-- 这是一条分割线 -->
+                <div  class="ui inverted section divider"></div>
+                <p class="m-text-thin m-opcity-tiny">©️2019 CSDN 皮肤主题: 大白 设计师: Henry-C的博客</p>
+            </div>
+        </footer>
+
+        <th:block th:fragment="scrispt">
+            <script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+            <script type="text/javascript" src="../static/lib/prism/prism.js" th:src="@{/lib/prism/prism.js}"></script>
+        </th:block>
+
+</body>
+</html>

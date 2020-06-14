@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<!--前面段模板-->
+<head th:fragment="head(title)">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width",initial-scale=1.0/>
+    <title>博客管理</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+    <link rel="stylesheet" href="../../static/css/me.css" th:href="@{/css/me.css}">
+    <link href="../../static/css/semantic.css" rel="stylesheet" type="text/css" th:href="@{/css/semantic.css}">
+    <link href="../../static/css/semantic.min.css" rel="stylesheet" type="text/css" th:href="@{/css/semantic.min.css}">
+    <link rel="stylesheet" href="../../static/lib/editormd/css/editormd.min.css" th:href="@{/lib/editormd/css/editormd.min.css}" />
+    <script src="../../static/js/semantic.js" th:src="@{/js/semantic.js}"></script>
+    <script src="../../static/js/jquery-3.4.1.js" th:src="@{/js/jquery-3.4.1.js}"></script>
+    <script src="../../static/js/semantic.min.js" th:src="@{/js/semantic.min.js}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+    <script type="text/javascript" src="../static/lib/prism/prism.js" th:src="@{/lib/prism/prism.js}"></script>
+    <script src="../../static/lib/editormd/editormd.min.js" th:src="@{/lib/editormd/editormd.min.js}"></script>
+    <script src="../../static/lib/editormd/examples/js/zepto.min.js" th:src="@{/lib/editormd/examples/js/zepto.min.js}"></script>
+</head>
+<body>
+        <!-- 导航 -->
+        <nav th:fragment="menu(n)"  class="ui inverted segment m-padded-tb-mini" >
+            <div class="ui container">
+                <div class="ui inverted stackable menu">
+                    <h2 class="ui teal header item">管理后台</h2>
+                    <!-- m-item的作用是在手机移动端时，点击按钮会出示导航栏，原导航栏是隐藏的（m-mobile-hide） -->
+                    <a href="#" th:href="@{/admin/blogs}" class="m-item item m-mobile-hide" th:classappend="${n==1}? 'active'"><i class="home icon"></i>博客</a>
+                    <a href="#" th:href="@{/admin/types}" class="m-item item m-mobile-hide" th:classappend="${n==2}? 'active'"><i class="idea icon"></i>分类</a>
+                    <a href="#" th:href="@{/admin/tags}" class="m-item item m-mobile-hide" th:classappend="${n==3}? 'active'"><i class=" tags icon"></i>标签</a>
+                    <div  class="right m-item menu m-mobile-hide">
+                        <div  class="ui dropdown item">
+                            <div class="text">
+<!--                               利用前端th模板 从session中获得用户的nickname与头像进行替换到h5前端展示中-->
+                                <img class="ui avatar image" src="../../static/images/我的照片.jpg" th:src="@{/images/我的照片.jpg}" style="">
+                                Henry-C
+                            </div>
+                            <i class="dropdown icon"></i>
+                            <div  class="menu">
+                                <a href="#" th:href="@{/admin/logout}" class="item">注销</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 存在问题，该按钮不可设置？？？？？但对后续应该无影响,已修复 -->
+            <div>
+                <a href="#" class="ui menu toggle black icon button m-right-top m-mobile-show">
+                    <i class="sidebar icon"></i>
+                </a>
+            </div>
+        </nav>
+
+        <span class="ui page grid">
+            <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=26212423&auto=1&height=66"></iframe>
+
+        </span>
+        <br>
+
+
+
+        <!-- 底部内容 -->
+        <footer th:fragment="footer" class="ui inverted vertical segment m-padded-tb-massive ">
+            <div class="ui center aligned container m-padded-tb-massive">
+                <div class="ui inverted divided stackable grid">
+                    <div class="three wide column">
+                        <img src="../static/images/二维码.jpg" th:src="@{/images/二维码.jpg}" class="ui rounded center aligned" alt="" style="width: 100px;">
+                    </div>
+                    <div class="three wide column">
+                        <h4 class="ui inverted header m-opcity-mini">最新博客</h4>
+                        <div  class="ui link list inverted">
+                            <a href="#" class="item">用户故事（User Story）</a>
+                            <a href="#" class="item">关于我</a>
+                            <a href="#" class="item">HelloWorld</a>
+                        </div>
+                    </div>
+                    <div class="three wide column">
+                        <h4 class="ui inverted header m-opcity-mini">联系我</h4>
+                        <div  class="ui link list inverted">
+                            <a href="#" class="item">E-mail</a>
+
+                            <a href="#" class="item">QQ：1191133427</a>
+                        </div>
+                    </div>
+                    <div class="seven wide column">
+                        <h4 class="ui inverted header m-opcity-mini" >最新博客</h4>
+                        <p class="m-text-thin m-opcity-mini">这是我的个人博客，发一些关于学习路上的笔记，思考和关于我的一些消息，愿明天即新生!!!!</p>
+                    </div>
+                </div>
+                <!-- 这是一条分割线 -->
+                <div  class="ui inverted section divider"></div>
+                <p class="m-text-thin m-opcity-tiny">©️2019 CSDN 皮肤主题: 大白 设计师: Henry-C的博客</p>
+            </div>
+        </footer>
+
+<!--        <th:block th:fragment="scrispt">-->
+<!--            <script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>-->
+<!--            <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>-->
+<!--            <script type="text/javascript" src="../static/lib/prism/prism.js" th:src="@{/lib/prism/prism.js}"></script>-->
+<!--        </th:block>-->
+
+</body>
+</html>

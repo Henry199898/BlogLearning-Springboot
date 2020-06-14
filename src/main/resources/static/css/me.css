@@ -1,0 +1,127 @@
+/* 背景图片,可以更换 */
+body{
+	background: url(../images/email-pattern.png);
+}
+
+/* 一个占位置的pad 分别为mini,large,big,massive*/
+.m-padded-tb-mini{
+	padding-top:0.2em !important;
+	padding-bottom:0.2em !important;
+}
+.m-padded-tb-tiny{
+	padding-top: 0.3em !important;
+	padding-bottom: 0.3em !important;
+}
+.m-padded-tb-small{
+	padding-top: 0.5em !important;
+	padding-bottom: 0.5em !important;
+}
+.m-padded-tb-large{
+	padding-top: 3em !important;
+	padding-bottom: 3em !important;
+}
+
+.m-padded-tb-big{
+	padding-top: 4em !important;
+	padding-bottom: 4em !important;
+}
+
+.m-padded-tb-massive{
+	padding-top: 5em !important;
+	padding-bottom: 5em !important;
+}
+.m-padded-lr{
+	padding-left: 4em;
+	padding-right: 4em;
+}
+
+/* 字体设置 */
+.m-text-thin{
+	font-weight: 300 !important;
+}
+.m-text-spaced{
+	letter-spacing: 1px !important;
+}
+
+.m-text-lined{
+	line-height: 1.8;
+}
+/* 透明度 */
+.m-opcity-mini{
+	opacity: 0.8 !important;
+}
+.m-opcity-tiny{
+	opacity: 0.6 !important;
+}
+
+/* display显示的属性 */
+.m-inline-block{
+	display: inline-block !important;
+}
+.m-container{
+	max-width: 72em !important;
+	margin: auto !important;
+}
+.m-container-small{
+	max-width: 60em !important;
+	margin: auto !important;
+}
+/* magin */
+.m-magin-tb-tiny{
+	margin-top: 0.3em !important;
+	maghin-bottom:0.3em !important;
+}
+.m-magin-tb-small{
+	margin-top: 0.5em !important;
+	margin-bottom: 0.5em !important;
+}
+.m-magin-tb-large{
+	margin-top: 1em !important;
+	margin-bottom: 1em !important;
+}
+.m-magin-bootom-mini{
+	margin-bottom: 1em !important;
+}
+
+/* 颜色color */
+.m-black{
+	color:#333;
+}
+/* 阴影 */
+.m-shadow-small{
+	box-shadow: 0 4px 8px rgba(0,0,0,0,2) !important;
+	-webkit-box-shadow: 0 4px 8px rgba(0,0,0,0,2) !important ;
+}
+/* button按钮位置 */
+.m-right-top{
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+.m-mobile-show{
+	display: none !important;
+}
+.m-mobile-wide{
+	
+}
+@media screen and (max-width:768px) {
+	.m-mobile-hide{
+		display: none !important;
+	}
+	.m-mobile-show{
+		display: block !important;
+	}
+	/* 好像没有响应.... */
+	.m-mobile-wide{
+		width: 100% !important;
+	}
+	
+	.m-padded-lr-responsive{
+		padding-left: 0 !important;
+		padding-right: 0 !important;
+	}
+	.m-mobile-lr-clear{
+		padding-left: 0 !important;
+		padding-right: 0 !important;
+	}
+}

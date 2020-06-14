@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+	<head th:replace="admin/_fragments :: head(~{::title})">
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width",initial-scale=1.0/>
+		<title>欢迎页面</title>
+<!--		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">-->
+<!--		<link rel="stylesheet" h ref="../../static/css/me.css"/>-->
+<!--		<link href="../../static/css/semantic.css" rel="stylesheet" type="text/css">-->
+<!--		<link href="../../static/css/semantic.min.css" rel="stylesheet" type="text/css">-->
+<!--		<script src="../../static/js/semantic.js"></script>-->
+<!--		<script src="../../static/js/jquery-3.4.1.js"></script>-->
+<!--		<script type="text/javascript" src="../../static/js/semantic.min.js"></script>-->
+		
+		
+	</head>
+	<body>
+		<!-- 导航 -->
+		<nav  class="ui inverted segment m-padded-tb-mini m-shadow-small"  th:replace="admin/_fragments :: menu(1)">
+<!--			<div class="ui container">-->
+<!--				<div class="ui inverted stackable menu">-->
+<!--					<h2 class="ui teal header item">管理后台</h2>-->
+<!--					&lt;!&ndash; m-item的作用是在手机移动端时，点击按钮会出示导航栏，原导航栏是隐藏的（m-mobile-hide） &ndash;&gt;-->
+<!--					<a href="#" class="m-item item m-mobile-hide"><i class="home icon"></i>博客</a>-->
+<!--					<a href="#" class="m-item item m-mobile-hide"><i class="idea icon"></i>分类</a>-->
+<!--					<a href="#" class="m-item item m-mobile-hide"><i class=" tags icon"></i>标签</a>-->
+<!--					<div  class="right m-item menu m-mobile-hide">-->
+<!--						<div  class="ui dropdown item">-->
+<!--							<div class="text">-->
+<!--							      <img class="ui avatar image" src="../../static/images/我的照片.jpg" style="width:100 px;">-->
+<!--							      Henry-C-->
+<!--							 </div>-->
+<!--							 <i class="dropdown icon"></i>-->
+<!--							 <div  class="menu">-->
+<!--							 	<a href="#" class="item">注销</a>-->
+<!--							 </div>-->
+<!--						</div>-->
+<!--					</div>-->
+<!--				</div>-->
+<!--			</div>-->
+<!--			&lt;!&ndash; 存在问题，该按钮不可设置？？？？？但对后续应该无影响,已修复 &ndash;&gt;-->
+<!--			<div>-->
+<!--				<a href="#" class="ui menu toggle black icon button m-right-top m-mobile-show">-->
+<!--					<i class="sidebar icon"></i>-->
+<!--				</a>-->
+<!--			</div>-->
+		</nav>
+		
+		<!-- 二级导航 -->
+		<div  class="ui menu">
+			<div  class="ui container">
+				<div  class="right menu">
+					<a href="#" class="item grey">发布</a>
+					<a href="#" class="active item teal">列表</a>
+				</div>
+				
+			</div>
+			
+		</div>
+		
+		<!-- 中间内容 -->
+		<div  class="m-container-small m-padded-tb-big">
+			<div  class="ui container">
+				<div class="ui container">
+					<div class="ui successc large message">
+						<h2> Hi,</h2>
+						<p>陈恒，欢迎你！！</p>
+					</div>
+
+					<img src="https://picsum.photos/id/10/800/450" class="ui rounded bordered fluid image"></img>
+				</div>
+			</div>
+		</div>
+		<br>
+		<!-- 底部内容 -->
+		<footer class="ui inverted vertical segment m-padded-tb-massive " th:replace="admin/_fragments :: footer">
+			<div class="ui center aligned container m-padded-tb-massive">
+				<div class="ui inverted divided stackable grid">
+					<div class="three wide column">
+						<img src="../../static/images/二维码.jpg" class="ui rounded center aligned" alt="" style="width: 100px;">
+					</div>
+					<div class="three wide column">	
+						<h4 class="ui inverted header m-opcity-mini">最新博客</h4>
+						<div  class="ui link list inverted">
+							<a href="#" class="item">用户故事（User Story）</a>
+							<a href="#" class="item">关于我</a>
+							<a href="#" class="item">HelloWorld</a>	
+						</div>
+					</div>
+					<div class="three wide column">	
+						<h4 class="ui inverted header m-opcity-mini">联系我</h4>
+						<div  class="ui link list inverted">
+						<a href="#" class="item">E-mail</a>
+						
+						<a href="#" class="item">QQ：1191133427</a>	
+						</div>
+					</div>
+					<div class="seven wide column">	
+						<h4 class="ui inverted header m-opcity-mini" >Blog</h4>
+						<p class="m-text-thin m-opcity-mini">这是我的个人博客，发一些关于学习路上的笔记，思考和关于我的一些消息，愿明天即新生!!!!</p>
+					</div>
+				</div>
+				<!-- 这是一条分割线 -->
+				<div  class="ui inverted section divider"></div>
+				<p class="m-text-thin m-opcity-tiny">©️2019 CSDN 皮肤主题: 大白 设计师: Henry-C的博客</p>
+			</div>
+		</footer>
+	<!-- <script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>	
+	<script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script> -->
+	
+	<script >
+		// 用于实现导航栏在移动端时的展示与隐藏，通过点击那个按钮实现‘m-mobile-hide’功能的存在与消失，变相实现功能；其中m-item是用于识别那几个需要隐藏功能的组件的标签
+		$('.menu.toggle').click(function() {
+			$('.m-item').toggleClass('m-mobile-hide');
+		});
+		// 赞赏二维码弹出出现问题，不可响应？？？但大体无影响
+		$('#payButton').popup({
+			popup: $('.payQ.popup')
+			// on:'click'
+			// position:'bottom center'
+		});
+		
+		$('.ui.dropdown')
+		  .dropdown({
+			  on : 'hover'
+		  });
+		
+	</script>
+	</body>
+</html>

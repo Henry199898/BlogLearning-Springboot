@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="admin/_fragments :: head(~{::title})">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>博客管理登录</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.css">
+    <link rel="stylesheet" href="../../static/css/me.css">
+</head>
+<body>
+    <div class="m-container-small m-padded-tb-massive" style="max-width: 30em !important;">
+        <div class="ui container  " >
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <div class="column">
+                <h2 class="ui black image  header">
+
+                    <div class="content center aligned">
+                        Log-in
+                    </div>
+                </h2>
+                <form class="ui large form" method="post" action="#" th:action="@{/admin/login}">
+                    <div class="ui stacked segment">
+                        <div class="field">
+                            <div class="ui left icon input">
+                                <i class="user icon"></i>
+                                <input type="text" name="username" placeholder="UserName">
+                            </div>
+                        </div>
+                        <div class="field">
+                            <div class="ui left icon input">
+                                <i class="lock icon"></i>
+                                <input type="password" name="password" placeholder="Password">
+                            </div>
+                        </div>
+                        <button class="ui fluid large black submit button" th:href="@{/admin/index}">Login</button>
+                    </div>
+                    <div class="ui error mini message"></div>
+<!--                    会进行判断表格中是否为空信息-->
+                    <div class="ui mini negative message " th:unless="${#strings.isEmpty(message)}" th:text="${message}}">Warning：用户名密码不能为空！！！！</div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script >
+        $('.ui.form').form({
+            fields: {
+                username:{
+                    identifier:'username',
+                    rules: [{
+                        type: 'empty',
+                        prompt:'请输入用户名'
+                    }]
+                },
+                password:{
+                    identifier:'password',
+                    rules: [{
+                        type: 'empty',
+                        prompt:'请输入密码'
+                    }]
+                }
+            }
+        });
+    </script>
+</body>
+</html>
